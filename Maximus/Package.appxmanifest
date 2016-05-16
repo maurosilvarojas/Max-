@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="eec43992-58eb-4b36-9c97-fecba5d292b8" Publisher="CN=regga" Version="1.0.0.0" />
+  <Identity Name="16890redmaurosilva.MaximusIoT" Publisher="CN=CCF7A148-058A-4481-94E1-955E9AE03CF0" Version="1.0.4.0" />
   <mp:PhoneIdentity PhoneProductId="eec43992-58eb-4b36-9c97-fecba5d292b8" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>Maximus</DisplayName>
-    <PublisherDisplayName>regga</PublisherDisplayName>
-    <Logo>Assets\maxLogo.png</Logo>
+    <DisplayName>Maximus IoT</DisplayName>
+    <PublisherDisplayName>redmaurosilva</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
     <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
@@ -15,18 +15,22 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Maximus.App">
-      <uap:VisualElements DisplayName="Maximus" Square150x150Logo="Assets\maxLogo.png" Square44x44Logo="Assets\maxLogo.png" Description="Maximus" BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\maxLogo.png" ShortName="MAX" Square310x310Logo="Assets\maxLogo.png">
+      <uap:VisualElements DisplayName="Maximus IoT" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Home Assistant based on Internet of Things" BackgroundColor="transparent">
+        <uap:LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\BadgeLogo.png" />
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" ShortName="MAX" Square310x310Logo="Assets\Square310x310Logo.png" Square71x71Logo="Assets\Square71x71Logo.png">
           <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
             <uap:ShowOn Tile="wide310x150Logo" />
             <uap:ShowOn Tile="square310x310Logo" />
           </uap:ShowNameOnTiles>
         </uap:DefaultTile>
-        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        <uap:SplashScreen Image="Assets\SplashScreen.jpg" BackgroundColor="transparent" />
       </uap:VisualElements>
     </Application>
   </Applications>
   <Capabilities>
     <Capability Name="internetClient" />
+    <DeviceCapability Name="webcam" />
+    <DeviceCapability Name="microphone" />
   </Capabilities>
 </Package>

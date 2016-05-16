@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="Maximus.Message"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Maximus"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="83,10,0,0" TextWrapping="Wrap" Text="Message" VerticalAlignment="Top" />
+        <ListBox x:Name="messageBox" Height="545" Margin="55,72,54,23" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#FFE8E8E8" FontSize="30"/>
+
+        <ComboBox x:Name="topicBox"  Margin="0,35,54,0" HorizontalAlignment="Right" Width="251" Background="#FF9C9CA0" DataContextChanged="topicBox_DataContextChanged" >
+
+            <ComboBoxItem Content="/LightSensor"  />
+            <ComboBoxItem Content="/TempSensor"  />
+        </ComboBox>
+
+    </Grid>
+</Page>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -32,19 +33,31 @@ namespace Maximus
         public Control()
         {
             this.InitializeComponent();
-            this.InitializeComponent();
-            //subscribeTxt.Text = "000";
-            this.client = new MqttClient("broker.mqttdashboard.com");
-            this.client.Connect(Guid.NewGuid().ToString());
             
-            //string[] topic = { "maxitest", "maxitemp" };
+            try
+            {
+                this.client = new MqttClient("broker.mqttdashboard.com");
+                this.client.Connect(Guid.NewGuid().ToString());
+                Debug.WriteLine("using broker.mqttdashboard.com");
 
-            byte[] qosLevels = { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE };
-            //client.Subscribe(topic, qosLevels);
+            }
+            catch (Exception)
+            {
+                try
+                {
+                    this.client = new MqttClient("iot.eclipse.org");
+                    this.client.Connect(Guid.NewGuid().ToString());
+                    Debug.WriteLine("using iot.eclipse.org");
+                }
+                catch (Exception)
+                {
+                    Debug.WriteLine("BROKER DOWN");
+                }
+            }
+
 
             this.client.MqttMsgPublishReceived += client_MqttMsgPublishReceived;
-
-
+            
             this.client.Subscribe(new string[] { "/lightsStatus" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
             this.client.Subscribe(new string[] { "/heaterStatus" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
             this.client.Subscribe(new string[] { "/doorStatus" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
@@ -52,6 +65,7 @@ namespace Maximus
 
         }
 
+        
         async void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
             message = e.Message;

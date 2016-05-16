@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="Maximus.heaterPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Maximus"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#FF8F8E8E">
+        <Grid Margin="10,10,0,10">
+            <StackPanel Height="525" Margin="10,10,10,0" VerticalAlignment="Top">
+                <TextBlock Name="tempData" FontSize="50" Text="Temperature" DataContextChanged="tempData_DataContextChanged" Height="66" />
+                <Grid x:Name="drawGrid" Background="Black" Height="310" Margin="0,30,0,0">
+                    <Polyline x:Name="myPolyline" Stroke="#FFFDE707" Grid.Row="2"/>
+                    <!--<Polyline x:Name="my2Polyline" Stroke="#FFF50909" Grid.Row="2"/>-->
+
+                </Grid>
+                <Canvas Height="100"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

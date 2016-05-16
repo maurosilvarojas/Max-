@@ -35,6 +35,7 @@
                        FontSize="28"
                        FontWeight="Bold"
                        Margin="20,5,0,0" Foreground="Black"/>
+            <MediaElement x:Name="mediaElement"></MediaElement>
 
             <!--<Button Name="SearchButton" 
                     RelativePanel.AlignRightWithPanel="True"
@@ -58,6 +59,12 @@
             <SplitView.Pane>
                 <ListBox SelectionMode="Single" 
                          SelectionChanged="ListBox_SelectionChanged" Background="#FFFEA520">
+                    <ListBoxItem Name="Help">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE814;" />
+                            <TextBlock FontSize="28" Margin="20,0,0,0" Text="S.O.S" FontWeight="Bold"/>
+                        </StackPanel>
+                    </ListBoxItem>
                     <ListBoxItem Name="Control">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE951;" />
@@ -66,34 +73,38 @@
                     </ListBoxItem>
                     <ListBoxItem Name="Access">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE80F;" />
-                            <TextBlock FontSize="24" Margin="20,0,0,0" Text="Access"/>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE116;" />
+                            <TextBlock FontSize="24" Margin="20,0,0,0" Text="Door"/>
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem Name="Calling">
+                    <ListBoxItem Name="Message">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE717;" />
-                            <TextBlock FontSize="24" Margin="20,0,0,0" Text="Calling"/>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE120;" />
+                            <TextBlock FontSize="24" Margin="20,0,0,0" Text="Message"/>
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem Name="Financial">
+                    <ListBoxItem Name="Lights">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xEB4E;" />
-                            <TextBlock FontSize="24" Margin="20,0,0,0" Text="Financial"/>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE82F;" />
+                            <TextBlock FontSize="24" Margin="20,0,0,0" Text="Lights"/>
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem Name="Food">
+
+                    <ListBoxItem Name="Temperature">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE823;" />
-                            <TextBlock FontSize="24" Margin="20,0,0,0" Text="Food"/>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE7F7;" />
+                            <TextBlock FontSize="28" Margin="20,0,0,0" Text="Graphs" />
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem Name="Help">
+
+                    <ListBoxItem Name="Settings">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xEC24;" />
-                            <TextBlock FontSize="28" Margin="20,0,0,0" Text="S.O.S" FontWeight="Bold"/>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE713;" />
+                            <TextBlock FontSize="24" Margin="20,0,0,0" Text="Settings"/>
                         </StackPanel>
                     </ListBoxItem>
+
+
                 </ListBox>
             </SplitView.Pane>
             <SplitView.Content>

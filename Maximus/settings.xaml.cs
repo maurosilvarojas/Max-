@@ -20,9 +20,9 @@ namespace Maximus
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Financial : Page
+    public sealed partial class settings : Page
     {
-        public Financial()
+        public settings()
         {
             this.InitializeComponent();
         }
